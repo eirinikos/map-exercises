@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Los Angeles!</title>
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
+    <style>
+      #map { height: 380px; width: 50%; }
+    </style>
+
+  </head>
+
+  <body>
+    <div id="map"></div>
+
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+    <script type="text/javascript">
+
+      // initialize Leaflet map instance & associate it to the element
+      var map = L.map('map').setView([34.052824, -118.264368], 12); 
+
+      // add a tile layer & apply it to the map variable
+      L.tileLayer('http://{s}.tiles.mapbox.com/v3/spatialdev.map-c9z2cyef/{z}/{x}/{y}.png').addTo(map); 
+
+      // add a marker
+      var marker = L.marker([34.052824, -118.264368]).bindPopup("Hello Galaxy!<b></b><br>Welcome to L.A.").openPopup().addTo(map);
+    </script>
+  </body>
+</html>
